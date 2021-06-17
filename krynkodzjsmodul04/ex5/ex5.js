@@ -10,8 +10,7 @@ function factorization(num, i = 2, arr = []) {
     }
     if(num % i == 0){
         arr.push(i)
-        num /= i
-        return factorization(num, i, arr)
+        return factorization(num /= i, i, arr)
     }
     else{
         return factorization(num, ++i, arr)
