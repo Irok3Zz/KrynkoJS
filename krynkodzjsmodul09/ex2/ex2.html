@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        li:hover{
+            font-weight: bolder;
+        }
+    </style>
+    <script src="ex2.js"></script>
+    <title>ex2</title>
+</head>
+<body>
+    <ul type="disc">
+        <li>
+            This PC
+        </li>
+        <ul>
+            <li onclick="main('C')">Local Disc (C:)</li>
+            <ul id="C">
+                <li>Program Files</li>
+                <li>Users</li>
+                <li>Windows</li>
+            </ul>
+            <li onclick="main('D')">Local Disc (D:)</li>
+            <ul id="D">
+                <li>New folder 1</li>
+                <li>New folder 2</li>
+                <li>New folder 3</li>
+            </ul>
+        </ul>
+    </ul>
+    <script src="ex2.js"></script>
+</body>
+</html>
