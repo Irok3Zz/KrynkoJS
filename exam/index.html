@@ -50,7 +50,7 @@
             ALL BOOKS:
         </span>
         <span style="float: right;" >
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <button type="button" id="newBook" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             New book
           </button>
         </span>
@@ -60,30 +60,35 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <h5 class="modal-title" id="staticBackdropLabel"></h5>
+            <span style="display: none;" id="idStorage"></span>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
  <!-- Forms -->
-            <div class="input-group">
+            <div class="input-group has-validation">
               <span class="input-group-text">Title & author</span>
               <input id="title" type="text" aria-label="Title" class="form-control" placeholder="Title">
               <input id="author" type="text" aria-label="Author" class="form-control" placeholder="Author">
+              
             </div>
-            <div class="input-group mb-3 mt-3">
+            <div class="input-group mb-3 mt-3 has-validation">
               <span class="input-group-text" id="inputGroup-sizing-default">Publisher</span>
               <input id="publisher" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 has-validation">
              <span class="input-group-text" id="inputGroup-sizing-default">Year of publishing</span>
              <input id="year" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+             
             </div>
-            <div class="input-group">
+            <div class="input-group has-validation">
               <span class="input-group-text">Number of pages & copies</span>
-              <input id="pages" type="number" aria-label="Pages" class="form-control" placeholder="Pages">
-              <input id="copies" type="number" aria-label="Copies" class="form-control" placeholder="Copies">
+              <input id="pages" type="number" min="1" aria-label="Pages" class="form-control" placeholder="Pages">
+              <input id="copies" type="number" min="1" aria-label="Copies" class="form-control" placeholder="Copies">
+              
             </div>
-            <button id="newBook" type="button" data-bs-dismiss="modal" class="btn btn-success mt-3">Save changes</button>
+            <button id="saveChanges" type="button" data-bs-dismiss="modal" class="btn btn-success mt-3">Save changes</button>
           </div>
 <!-- end forms -->
         </div>
@@ -98,12 +103,12 @@
   <div class="m-3">
         <span>Sort by:</span>
         <select style="display: inline-block; width: 30%;" class="form-select" aria-label="Default select example">
-          <option selected>Name</option>
-          <option value="1">Author</option>
-          <option value="2">Publishing</option>
-          <option value="3">Year of publishing</option>
+          <option selected>Title</option>
+          <option >Author</option>
+          <option >Publisher</option>
+          <option >Year of publishing</option>
         </select>
-        <button type="button" class="btn btn-success">Sort</button>
+        <button type="button" class="btn btn-success" id="sort">Sort</button>
     </div>
     <!-- end sort -->
 
